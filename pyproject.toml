@@ -14,7 +14,7 @@ requests = "^2.31.0"
 pillow = "^10.2.0"
 python-dotenv = "^1.0.1"
 pydantic = "^2.6.2"
-naptha-sdk = {git = "https://github.com/NapthaAI/naptha-sdk.git"}
+naptha-sdk = {git = "https://github.com/NapthaAI/naptha-sdk.git", branch = "chore/support-https"}
 
 
 [build-system]
