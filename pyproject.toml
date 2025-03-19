@@ -1,22 +1,24 @@
-[tool.poetry]
+[project]
 name = "generate_image_tool"
 version = "0.1.0"
-description = ""
-authors = ["moarshy <marshath@gmail.com>"]
+description = "A tool to generate images"
 readme = "README.md"
-packages = [
-    { include = "generate_image_tool", from = "." }
+requires-python = ">=3.10"
+dependencies = [
+    "naptha-sdk",
+    "pydantic>=2.10.6",
+    "requests>=2.31.0",
+    "pillow>=10.2.0",
+    "python-dotenv>=1.0.1",
 ]
 
-[tool.poetry.dependencies]
-python = ">=3.10,<=3.13"
-requests = "^2.31.0"
-pillow = "^10.2.0"
-python-dotenv = "^1.0.1"
-pydantic = "^2.6.2"
-naptha-sdk = {git = "https://github.com/NapthaAI/naptha-sdk.git"}
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["generate_image_tool*"]
 
+[tool.uv.sources]
+naptha-sdk = { git = "https://github.com/NapthaAI/naptha-sdk.git" }
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
